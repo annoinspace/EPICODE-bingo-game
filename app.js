@@ -27,7 +27,7 @@ const generateRandomNumber = function (range) {
   const randomNumDiv = document.getElementById("randomNumDisplay")
   randomNumDiv.innerText = randomNum
   const cells = document.querySelectorAll("#bingoBoardContainer .bingoNumber")
-  cells[randomNum].classList.add("highlight")
+  cells[randomNum - 1].classList.add("highlight")
 }
 
 window.onload = function () {
