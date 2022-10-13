@@ -16,14 +16,14 @@ const fillArray = function () {
   return arr
 }
 
-const getRandomArray = function (range) {
+const getRandomNumber = function (range) {
   const randomIndex = Math.floor(Math.random() * range.length)
   const randomNum = range.splice(randomIndex, 1)[0]
   return randomNum
 }
 
 const generateRandomNumber = function (range) {
-  const randomNum = getRandomArray(range)
+  const randomNum = getRandomNumber(range)
   const randomNumDiv = document.getElementById("randomNumDisplay")
   randomNumDiv.innerText = randomNum
   const cells = document.querySelectorAll("#bingoBoardContainer .bingoNumber")
