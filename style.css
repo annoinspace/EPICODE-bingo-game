@@ -1,14 +1,43 @@
+#mainContainer {
+  display: flex;
+}
 #bingoBoardContainer {
-  max-width: 500px;
+  max-width: 460px;
+  background-color: beige;
 }
 
 .bingoNumber {
   background-color: lightblue;
   border: 1px solid black;
   display: inline-block;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   text-align: center;
   font-size: 30px;
-  margin: auto;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+button {
+  margin: 12px;
+}
+
+#userBoardContainer {
+  max-width: 230px;
+  background-color: beige;
+  margin-left: 50px;
+  margin-top: 100px;
+  margin-bottom: 120px;
+}
+
+.userBingoNumber {
+  background-color: lightpink;
+  border: 1px solid black;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  font-size: 30px;
+  margin: 5px;
+  border-radius: 50%;
 }
