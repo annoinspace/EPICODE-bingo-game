@@ -1,0 +1,14 @@
+#bingoBoardContainer {
+  max-width: 500px;
+}
+
+.bingoNumber {
+  background-color: lightblue;
+  border: 1px solid black;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 30px;
+  margin: auto;
+}
