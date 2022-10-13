@@ -22,19 +22,19 @@ let createUserBingoSheet = function () {
     const userBingo = document.createElement("div")
     const userBingoParent = document.getElementById("userBoardContainer")
     userBingo.classList.add("userBingoNumber")
-    userBingo.innerHTML = i + 1
+    let initialNumber = i + 1
+    userBingo.innerHTML = initialNumber
     userBingoParent.appendChild(userBingo)
   }
 }
 createUserBingoSheet()
 
 let getRandomInt = function () {
-  let currentSquare = document.querySelectorAll("bingoNumber")[i]
-
   for (i = 0; i < numberOfSquares; i++) {
-    let randomNumber = Math.ceil(Math.random() * numberOfSquares)
+    return Math.ceil(Math.random() * numberOfSquares)
   }
 }
 
-document.getElementById("randomiseNum").addEventListener("click", getRandomInt)
+getRandomInt()
+
 // when button is clicked, the numbers are randomised
