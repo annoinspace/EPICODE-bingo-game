@@ -1,40 +1,40 @@
-let numberOfSquares = 76
+let numberOfMainSquares = 76
 
-let createBingoSquares = function () {
-  console.log("this is working")
+let generateMainBoard = function () {
+  const mainBoard = document.getElementById("bingoBoardContainer")
 
-  for (i = 0; i < numberOfSquares; i++) {
-    const newBingoNumContainer = document.createElement("div")
-    const bingoNumbersParent = document.getElementById("bingoBoardContainer")
-    newBingoNumContainer.classList.add("bingoNumber")
-    newBingoNumContainer.innerHTML = i + 1
-    bingoNumbersParent.appendChild(newBingoNumContainer)
-  }
-}
-createBingoSquares()
-
-let numberOfUserSquares = 24
-
-let createUserBingoSheet = function () {
-  console.log("this is working")
-
-  for (i = 0; i < numberOfUserSquares; i++) {
-    const userBingo = document.createElement("div")
-    const userBingoParent = document.getElementById("userBoardContainer")
-    userBingo.classList.add("userBingoNumber")
-    let initialNumber = i + 1
-    userBingo.innerHTML = initialNumber
-    userBingoParent.appendChild(userBingo)
-  }
-}
-createUserBingoSheet()
-
-let getRandomInt = function () {
-  for (i = 0; i < numberOfSquares; i++) {
-    return Math.ceil(Math.random() * numberOfSquares)
+  for (i = 0; i < numberOfMainSquares; i++) {
+    mainBoard.innerHTML += `<div class ='bingoNumber'>${i + 1}</div>`
   }
 }
 
-getRandomInt()
+const fillArray = function () {
+  const arr = []
+  for (let i = 0; i < 76; i++) {
+    arr.push(i + 1)
+  }
+  return arr
+}
 
-// when button is clicked, the numbers are randomised
+const getRandomArray = function (range) {
+  const randomIndex = Math.floor(Math.random() * range.length)
+  const randomNum = range.splice(randomIndex, 1)[0]
+  return randomNum
+}
+
+const generateRandomNumber = function (range) {
+  const randomNum = getRandomArray(range)
+  const randomNumDiv = document.getElementById("randomNumDisplay")
+  randomNumDiv.innerText = randomNum
+  const cells = document.querySelectorAll("#bingoBoardContainer .bingoNumber")
+  cells[randomNum].classList.add("highlight")
+}
+
+window.onload = function () {
+  generateMainBoard()
+  const randomButton = document.getElementById("randButton")
+  const range = fillArray()
+  randomButton.addEventListener("click", function () {
+    generateRandomNumber(range)
+  })
+}

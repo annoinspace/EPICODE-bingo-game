@@ -9,10 +9,17 @@
   </head>
   <body>
     <div id="mainContainer">
-      <div id="bingoBoardContainer"><button id="randomiseNum" onclick="getRandomInt()">
-        Randomise Numbers!</div>
-      
-      </button>
+      <h1>BINGO!</h1>
+      <div id="bingoBoardContainer"></div>
+      <div id="randButtonContainer">
+        <input
+          type="button"
+          id="randButton"
+          class="btn"
+          value="Click me for a random number!"
+        />
+        <h5 id="randomNumDisplay"></h5>
+      </div>
       <div id="userBoardContainer"></div>
     </div>
     <script src="./app.js"></script>
